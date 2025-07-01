@@ -1,0 +1,19 @@
+# Robots.txt para Grupo de Promoções WhatsApp - Promoção Fit Moda
+# Otimizado para SEO de grupos de ofertas Shopee, Amazon, Magazine Luiza
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /logo.jpeg
+Allow: /logoRosa.png
+
+# Bloquear arquivos desnecessários para SEO
+Disallow: /indexantigo.html
+Disallow: /*.git/
+Disallow: /.*
+
+# Sitemap para facilitar indexação
+Sitemap: https://promocaofitmoda.com.br/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1 
