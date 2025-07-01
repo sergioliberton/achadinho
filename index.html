@@ -703,10 +703,18 @@
 
         // WhatsApp functionality
         function handleWhatsAppClick(gender) {
-            const message = `Olá! Tenho interesse nas promoções para ${gender}!`;
-            const encodedMessage = encodeURIComponent(message);
-            const phoneNumber = "5511999999999"; // Substitua pelo número real
-            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+            let groupLink = '';
+            
+            if (gender === 'Homens') {
+                groupLink = 'https://chat.whatsapp.com/C79JwtJct88BHzzHBpEfS8';
+            } else if (gender === 'Mulheres') {
+                groupLink = 'https://chat.whatsapp.com/Gbv4VzwPkd5JXqzzASbNiX?mode=ac_t';
+            }
+            
+            if (groupLink) {
+                window.open(groupLink, '_blank');
+            }
+            
             modal.style.display = 'none';
         }
 
