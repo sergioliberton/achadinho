@@ -807,10 +807,11 @@
     </div>
 
     <script>
-        if (btn) {
-                btn.style.animation = 'none';
+        const btn2 = document.querySelector('.cta-button');
+        if (btn2) {
+            btn2.style.animation = 'none';
                 setTimeout(() => {
-                    btn.style.animation = 'tada 1s ease-in-out 3';
+                    btn2.style.animation = 'tada 1s ease-in-out 3';
                 }, 10);
             }
         // Efeito de urgência no botão a cada 15 segundos
