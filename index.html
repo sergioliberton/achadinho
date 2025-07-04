@@ -92,6 +92,24 @@
         gtag('config', 'G-GPDSW48NX8');
     </script>
     
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID_AQUI');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+    
     <style>
         * {
             margin: 0;
@@ -840,6 +858,19 @@
         const ctaButton = document.getElementById('ctaButton');
 
         ctaButton.addEventListener('click', () => {
+            // Google Analytics
+            gtag('event', 'cta_button_click', {
+                event_category: 'engagement',
+                event_label: 'botao_entrar_grupo',
+                value: 1
+            });
+            
+            // Facebook Pixel
+            fbq('track', 'Lead', {
+                content_name: 'Botão Entrar Grupo',
+                content_category: 'engagement'
+            });
+            
             modal.style.display = 'flex';
         });
 
@@ -856,8 +887,35 @@
             
             if (gender === 'Homens') {
                 groupLink = 'https://chat.whatsapp.com/C79JwtJct88BHzzHBpEfS8';
+                
+                // Google Analytics
+                gtag('event', 'whatsapp_group_click', {
+                    event_category: 'conversion',
+                    event_label: 'grupo_homens',
+                    value: 1
+                });
+                
+                // Facebook Pixel - Conversão
+                fbq('track', 'CompleteRegistration', {
+                    content_name: 'Grupo WhatsApp Homens',
+                    content_category: 'conversion'
+                });
+                
             } else if (gender === 'Mulheres') {
                 groupLink = 'https://chat.whatsapp.com/Gbv4VzwPkd5JXqzzASbNiX?mode=ac_t';
+                
+                // Google Analytics
+                gtag('event', 'whatsapp_group_click', {
+                    event_category: 'conversion',
+                    event_label: 'grupo_mulheres',
+                    value: 1
+                });
+                
+                // Facebook Pixel - Conversão
+                fbq('track', 'CompleteRegistration', {
+                    content_name: 'Grupo WhatsApp Mulheres',
+                    content_category: 'conversion'
+                });
             }
             
             if (groupLink) {
