@@ -28,19 +28,23 @@
         gtag('config', 'G-GPDSW48NX8');
     </script>
     
-    <!-- Meta Pixel -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1696271537671209');
-        fbq('track', 'PageView');
+   <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3042899785910697');
+    fbq('track', 'PageView');
     </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3042899785910697&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     
     <style>
         * {
@@ -621,7 +625,8 @@
         // Função para entrar no VIP
         function joinVIP() {
             // Google Analytics
-            gtag('event', 'vip_conversion_super_otimizado', {
+           // Google Analytics
+           gtag('event', 'whatsapp_group_click', {
                 event_category: 'conversion',
                 event_label: 'botao_vip_super_otimizado',
                 value: 1
