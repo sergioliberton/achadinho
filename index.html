@@ -652,25 +652,6 @@
             });
         }, 6000);
         
-        // Mostrar/esconder botão fixo baseado no scroll
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const fixedBtn = document.querySelector('.cta-fixed');
-            const mainBtn = document.querySelector('.cta-button');
-            const st = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (window.innerWidth <= 768) {
-                const mainBtnRect = mainBtn.getBoundingClientRect();
-                // Se o botão principal não está visível, mostrar o fixo
-                if (mainBtnRect.bottom < 0 || mainBtnRect.top > window.innerHeight) {
-                    fixedBtn.style.display = 'block';
-                } else {
-                    fixedBtn.style.display = 'none';
-                }
-            }
-            
-            lastScrollTop = st <= 0 ? 0 : st;
-        });
     </script>
 </body>
 </html> 
