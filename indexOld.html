@@ -82,17 +82,16 @@
     }
     </script>
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPDSW48NX8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-GPDSW48NX8');
     </script>
     
-       <!-- Meta Pixel Code -->
+   <!-- Meta Pixel Code -->
 <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -102,13 +101,14 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1696271537671209');
+    fbq('init', '3042899785910697');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1696271537671209&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=3042899785910697&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    
 
 
     
@@ -697,7 +697,7 @@
             <!-- CTA Button -->
             <section class="cta-section">
                 <h2 class="sr-only">Entre no Grupo de Promoções WhatsApp</h2>
-                <button class="cta-button" id="ctaButton" aria-label="Entrar no grupo de promoções do WhatsApp">
+                <button class="cta-button" onclick="joinVIP()" id="ctaButton" aria-label="Entrar no grupo de promoções do WhatsApp">
                     <svg class="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                     </svg>
@@ -855,84 +855,28 @@
             }
         }, 15000);
 
-        // Modal functionality
-        const modal = document.getElementById('modal');
-        const ctaButton = document.getElementById('ctaButton');
-
-        ctaButton.addEventListener('click', () => {
+         // Função para entrar no VIP
+         function joinVIP() {
             // Google Analytics
-            gtag('event', 'cta_button_click', {
-                event_category: 'engagement',
-                event_label: 'botao_entrar_grupo',
+            gtag('event', 'whatsapp_group_click', {
+                event_category: 'conversion',
+                event_label: 'botao_vip_super_otimizado',
                 value: 1
             });
             
             // Facebook Pixel
             fbq('track', 'Lead', {
-                content_name: 'Botão Entrar Grupo',
-                content_category: 'engagement'
+                content_name: 'Botão VIP Super Otimizado',
+                content_category: 'high_intent_conversion',
+                value: 1
             });
             
-            modal.style.display = 'flex';
-        });
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // WhatsApp functionality
-        function handleWhatsAppClick(gender) {
-            let groupLink = '';
-            
-            if (gender === 'Homens') {
-                groupLink = 'https://chat.whatsapp.com/C79JwtJct88BHzzHBpEfS8';
-                
-                // Google Analytics
-                gtag('event', 'whatsapp_group_click', {
-                    event_category: 'conversion',
-                    event_label: 'grupo_homens',
-                    value: 1
-                });
-                
-                // Facebook Pixel - Conversão
-                fbq('track', 'CompleteRegistration', {
-                    content_name: 'Grupo WhatsApp Homens',
-                    content_category: 'conversion'
-                });
-                
-            } else if (gender === 'Mulheres') {
-                groupLink = 'https://chat.whatsapp.com/Gbv4VzwPkd5JXqzzASbNiX?mode=ac_t';
-                
-                // Google Analytics
-                gtag('event', 'whatsapp_group_click', {
-                    event_category: 'conversion',
-                    event_label: 'grupo_mulheres',
-                    value: 1
-                });
-                
-                // Facebook Pixel - Conversão
-                fbq('track', 'CompleteRegistration', {
-                    content_name: 'Grupo WhatsApp Mulheres',
-                    content_category: 'conversion'
-                });
-            }
-            
-            if (groupLink) {
-                window.open(groupLink, '_blank');
-            }
-            
-            modal.style.display = 'none';
+            // Redirecionar direto para WhatsApp
+           // window.open('https://chat.whatsapp.com/Gbv4VzwPkd5JXqzzASbNiX?mode=ac_t', '_blank');
+            window.location.href = 'https://chat.whatsapp.com/Gbv4VzwPkd5JXqzzASbNiX?mode=ac_t';
         }
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'flex') {
-                modal.style.display = 'none';
-            }
-        });
+
     </script>
 </body>
 </html>
